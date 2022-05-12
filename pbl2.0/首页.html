@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    body {
+        background-color: #f3f5f7;
+    }
+    
+    button {
+        border: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .clearfix:before,
+    .clearfix:after {
+        content: "";
+        display: table;
+    }
+    
+    .clearfix:after {
+        clear: both;
+    }
+    
+    .clearfix {
+        *zoom: 1;
+    }
+    
+    .w {
+        width: 1200px;
+        margin: auto;
+    }
+    
+    .fixedbar {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        z-index: 1;
+        margin-left: -862px;
+        width: 252px;
+        height: 565px;
+    }
+    /*header start*/
+    
+    .header {
+        height: 42px;
+        margin: 30px auto;
+    }
+    
+    .logo {
+        float: left;
+        margin-right: 60px;
+    }
+    
+    .nav {
+        float: left;
+    }
+    
+    .gw {
+        background-color: #a5a5a5;
+    }
+    
+    .nav ul li {
+        float: left;
+        margin: 0 5px;
+    }
+    
+    .nav ul li a {
+        display: block;
+        height: 40px;
+        padding: 0 20px;
+        margin-right: 5px;
+        line-height: 40px;
+        font-size: 18px;
+        color: #050505;
+        text-decoration: none;
+    }
+    
+    .nav ul li a:hover {
+        border-bottom: 2px solid green;
+    }
+    
+    .search {
+        float: left;
+        margin-left: 70px;
+    }
+    
+    .search input {
+        float: left;
+        width: 340px;
+        height: 36px;
+        border: 1px solid limegreen;
+        border-right: 0;
+        padding-left: 20px;
+        color: #ccc;
+    }
+    
+    .search button {
+        float: left;
+        width: 48px;
+        height: 38px;
+        background-color: green;
+    }
+    
+    .banner {
+        height: 420px;
+        background: greenyellow url(../pbl2.0/CioPOWJ2IXaAUvMoAAFXeTjJKwo361.jpg) no-repeat top center;
+        background-position: 50%;
+    }
+    
+    .subnav {
+        float: left;
+        width: 110px;
+        height: 420px;
+        padding: 0 35px;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    
+    .subnav li {
+        height: 50px;
+        line-height: 50px;
+    }
+    
+    .subnav li a {
+        display: inline-block;
+        width: 145px;
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    
+    .subnav li a:hover {
+        color: green;
+    }
+    
+    .subnav li a span {
+        float: right;
+    }
+    
+    .all {
+        display: block;
+        height: 38px;
+        border: 1px solid greenyellow;
+        margin-top: 10px;
+        font-size: 16px;
+        color: green;
+        text-align: center;
+        line-height: 38px;
+    }
+    
+    .all:hover {
+        background-color: greenyellow;
+        color: #fff;
+    }
+    
+    .goods {
+        height: 60px;
+        background-color: #fff;
+        margin-top: 10px;
+        line-height: 60px;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    }
+    
+    .goods h3 {
+        float: left;
+        font-size: 16px;
+        color: greenyellow;
+        margin: 0 30px;
+    }
+    
+    .goods-item {
+        float: left;
+        color: #bfbfbf;
+    }
+    
+    .goods-item a {
+        font-size: 16px;
+        color: #050505;
+        margin: 0 30px;
+    }
+    
+    .mod {
+        float: right;
+        margin-right: 30px;
+        font-size: 14px;
+        color: greenyellow;
+    }
+    
+    .box {
+        margin-top: 15px;
+    }
+    
+    .box_hd {
+        height: 60px;
+        line-height: 60px;
+    }
+    
+    .box_hd h3 {
+        float: left;
+        font-size: 20px;
+        color: #494949;
+        font-weight: 400;
+    }
+    
+    .box_hd a {
+        float: right;
+        margin-right: 30px;
+        font-size: 12px;
+        color: #a5a5a5;
+    }
+    
+    .box_bd {
+        width: 1215px;
+    }
+    
+    .box_bd li {
+        position: relative;
+        float: left;
+        width: 380px;
+        height: 253px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        background-color: #fff;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+    }
+    
+    .box_bd .hot {
+        position: absolute;
+        top: 0;
+        right: -4px;
+        width: 40px;
+    }
+    
+    .box_bd li h4 {
+        margin: 20px;
+        font-size: 14px;
+        text-align: center;
+        color: #050505;
+        font-weight: 400;
+    }
+    
+    .box_bd li p {
+        margin: 0 20px;
+        font-size: 12px;
+        color: #999;
+    }
+    
+    .box_bd p span {
+        color: green;
+    }
+    
+    .footer {
+        height: 385px;
+        padding-top: 15px;
+        background-color: #fff;
+    }
+    
+    .boxq {
+        display: none;
+        position: absolute;
+        left: 340px;
+        top: 102px;
+        width: 770px;
+        height: 420px;
+        background-color: rgb(169, 166, 171);
+    }
+    
+    .boxq li {
+        display: inline-block;
+        width: 150px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+    
+    .boxjs {
+        position: relative;
+        left: 20px;
+        top: 10px;
+    }
+    
+    .boxbig {
+        background-color: #050505;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>hhxx</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../pbl2.0/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <div class="header w">
+        <div class="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li class="gw"><a href="#">岗位查询</a></li>
+                <li><a href="#">公司查询</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" value="请输入关键词" />
+            <button>搜索</button>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="w">
+            <div class="boxq" id="boxq1">
+                <div class="boxjs">
+                    <ul>
+                        <h4>后端开发</h4>
+                        <li><a href="">java</a></li>
+                        <li><a href="">php</a></li>
+                        <li><a href="">c++</a></li>
+                        <li><a href="">搜索算法</a></li>
+                        <li><a href="">C</a></li>
+                        <li><a href="">C#</a></li>
+                        <li><a href="">数据挖掘</a></li>
+                        <li><a href="">Python</a></li>
+                        <li><a href="">VB</a></li>
+                        <li><a href="">全栈工程师</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>移动开发</h4>
+                        <li><a href="">HTML5</a></li>
+                        <li><a href="">Android</a></li>
+                        <li><a href="">ios</a></li>
+                        <li><a href="">WP</a></li>
+                        <li><a href="">移动开发其他</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>前端开发</h4>
+                        <li><a href="">web前端</a></li>
+                        <li><a href="">Flash</a></li>
+                        <li><a href="">html5</a></li>
+                        <li><a href="">javaScript</a></li>
+                        <li><a href="">COCOS2D-X</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>人工智能</h4>
+                        <li><a href="">深度学习</a></li>
+                        <li><a href="">机器学习</a></li>
+                        <li><a href="">图像处理</a></li>
+                        <li><a href="">图像识别</a></li>
+                        <li><a href="">语音识别</a></li>
+                        <li><a href="">机器视觉</a></li>
+                        <li><a href="">算法工程师</a></li>
+                        <li><a href="">自然语言处理</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>测试</h4>
+                        <li><a href="">测试工程师</a></li>
+                        <li><a href="">自动化测试</a></li>
+                        <li><a href="">功能测试</a></li>
+                        <li><a href="">性能测试</a></li>
+                        <li><a href="">测试开发</a></li>
+                        <li><a href="">游戏测试</a></li>
+                        <li><a href="">白盒测试</a></li>
+                        <li><a href="">灰盒测试</a></li>
+                        <li><a href="">黑盒测试</a></li>
+                        <li><a href="">手机测试</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxq" id="boxq2">
+                <div class="boxjs">
+                    <ul>
+                        <h4>产品经理</h4>
+                        <li><a href="">产品经理</a></li>
+                        <li><a href="">网页产品经理</a></li>
+                        <li><a href="">移动产品经理</a></li>
+                        <li><a href="">产品助理</a></li>
+                        <li><a href="">数据产品经理</a></li>
+                        <li><a href="">电商产品经理</a></li>
+                        <li><a href="">游戏策划</a></li>
+                        <li><a href="">产品实习生</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>产品设计师</h4>
+                        <li><a href="">网页产品设计师</a></li>
+                        <li><a href="">无线产品设计师</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>高端职位</h4>
+                        <li><a href="">产品部经理</a></li>
+                        <li><a href="">产品总监</a></li>
+                        <li><a href="">游戏制作人</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxq" id="boxq3">
+                <div class="boxjs">
+                    <ul>
+                        <h4>视觉设计</h4>
+                        <li><a href="">视觉设计师</a></li>
+                        <li><a href="">网页设计师</a></li>
+                        <li><a href="">Flash设计师</a></li>
+                        <li><a href="">APP设计师</a></li>
+                        <li><a href="">UI设计师</a></li>
+                        <li><a href="">平面设计师</a></li>
+                        <li><a href="">美术设计师</a></li>
+                        <li><a href="">广告设计师</a></li>
+                        <li><a href="">游戏特效</a></li>
+                        <li><a href="">游戏界面设计师</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>交互设计</h4>
+                        <li><a href="">交互设计师</a></li>
+                        <li><a href="">无线交互设计师</a></li>
+                        <li><a href="">网页交互设计师</a></li>
+                        <li><a href="">硬件交互设计师</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>用户研究</h4>
+                        <li><a href="">数据分析师</a></li>
+                        <li><a href="">用户研究员</a></li>
+                        <li><a href="">游戏数值策划</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>人工智能</h4>
+                        <li><a href="">深度学习</a></li>
+                        <li><a href="">机器学习</a></li>
+                        <li><a href="">图像处理</a></li>
+                        <li><a href="">图像识别</a></li>
+                        <li><a href="">语音识别</a></li>
+                        <li><a href="">机器视觉</a></li>
+                        <li><a href="">算法工程师</a></li>
+                        <li><a href="">自然语言处理</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxq" id="boxq4">
+                <div class="boxjs">
+                    <ul>
+                        <h4>运营</h4>
+                        <li><a href="">用户运营</a></li>
+                        <li><a href="">产品运营</a></li>
+                        <li><a href="">数据运营</a></li>
+                        <li><a href="">内容运营</a></li>
+                        <li><a href="">活动运营</a></li>
+                        <li><a href="">商家运营</a></li>
+                        <li><a href="">品类运营</a></li>
+                        <li><a href="">游戏运营</a></li>
+                        <li><a href="">网络推广</a></li>
+                        <li><a href="">新媒体运营</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>编辑</h4>
+                        <li><a href="">副主编</a></li>
+                        <li><a href="">内容编辑</a></li>
+                        <li><a href="">文案策划</a></li>
+                        <li><a href="">记者</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>客服</h4>
+                        <li><a href="">售前咨询</a></li>
+                        <li><a href="">售后服务</a></li>
+                        <li><a href="">淘宝客服</a></li>
+                        <li><a href="">客服经理</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxq" id="boxq5">
+                <div class="boxjs">
+                    <ul>
+                        <h4>市场/营销</h4>
+                        <li><a href="">市场营销</a></li>
+                        <li><a href="">市场策划</a></li>
+                        <li><a href="">市场顾问</a></li>
+                        <li><a href="">商务渠道</a></li>
+                        <li><a href="">商业数据分析</a></li>
+                        <li><a href="">活动策划</a></li>
+                        <li><a href="">网络营销</a></li>
+                        <li><a href="">海外市场</a></li>
+                        <li><a href="">商务专员</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>媒介/公关</h4>
+                        <li><a href="">政府关系</a></li>
+                        <li><a href="">品牌公关</a></li>
+                        <li><a href="">广告协调</a></li>
+                        <li><a href="">媒介投放</a></li>
+                        <li><a href="">媒介合作</a></li>
+                        <li><a href="">媒介顾问</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>品牌/广告</h4>
+                        <li><a href="">广告创意</a></li>
+                        <li><a href="">广告制作</a></li>
+                        <li><a href="">广告文案</a></li>
+                        <li><a href="">广告投放</a></li>
+                        <li><a href="">广告定价</a></li>
+                        <li><a href="">广告专员</a></li>
+                        <li><a href="">品牌合作</a></li>
+                        <li><a href="">品牌策划</a></li>
+                        <li><a href="">品牌专员</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxq" id="boxq6">
+                <div class="boxjs">
+                    <ul>
+                        <h4>销售</h4>
+                        <li><a href="">销售专员</a></li>
+                        <li><a href="">销售顾问</a></li>
+                        <li><a href="">销售经理</a></li>
+                        <li><a href="">客户代表</a></li>
+                        <li><a href="">大客户代表</a></li>
+                        <li><a href="">客户经理</a></li>
+                        <li><a href="">商务拓展</a></li>
+                        <li><a href="">渠道销售</a></li>
+                        <li><a href="">代理商销售</a></li>
+                        <li><a href="">电话销售</a></li>
+                        <li><a href="">广告销售</a></li>
+                        <li><a href="">商务渠道</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>销售管理</h4>
+                        <li><a href="">销售总监</a></li>
+                        <li><a href="">商务总监</a></li>
+                        <li><a href="">区域总监</a></li>
+                        <li><a href="">城市经理</a></li>
+                        <li><a href="">团队经理</a></li>
+                        <li><a href="">销售VP</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxq" id="boxq7">
+                <div class="boxjs">
+                    <ul>
+                        <h4>人力资源</h4>
+                        <li><a href="">人力资源</a></li>
+                        <li><a href="">招聘</a></li>
+                        <li><a href="">HRBP</a></li>
+                        <li><a href="">人事/HR</a></li>
+                        <li><a href="">培训经理</a></li>
+                        <li><a href="">薪资福利经理</a></li>
+                        <li><a href="">绩效考核经理</a></li>
+                        <li><a href="">员工关系</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>行政</h4>
+                        <li><a href="">助理</a></li>
+                        <li><a href="">前台</a></li>
+                        <li><a href="">行政</a></li>
+                        <li><a href="">总助</a></li>
+                        <li><a href="">文秘</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>财务</h4>
+                        <li><a href="">会计</a></li>
+                        <li><a href="">出纳</a></li>
+                        <li><a href="">财务</a></li>
+                        <li><a href="">结算</a></li>
+                        <li><a href="">税务</a></li>
+                        <li><a href="">审计</a></li>
+                        <li><a href="">风控</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>法务</h4>
+                        <li><a href="">法务</a></li>
+                        <li><a href="">律师</a></li>
+                        <li><a href="">专利</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxq" id="boxq8">
+                <div class="boxjs">
+                    <ul>
+                        <h4>技术开发</h4>
+                        <li><a href="">H5游戏开发</a></li>
+                        <li><a href="">小游戏开发</a></li>
+                        <li><a href="">游戏后端开发</a></li>
+                        <li><a href="">C++游戏开发</a></li>
+                        <li><a href="">FLASH</a></li>
+                        <li><a href="">COCOS2D-X</a></li>
+                        <li><a href="">U3D</a></li>
+                        <li><a href="">游戏测试</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>产品策划</h4>
+                        <li><a href="">游戏制作人</a></li>
+                        <li><a href="">游戏产品经理</a></li>
+                        <li><a href="">游戏项目经理</a></li>
+                        <li><a href="">游戏策划</a></li>
+                        <li><a href="">剧情设计</a></li>
+                        <li><a href="">游戏文案</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>设计</h4>
+                        <li><a href="">游戏动画</a></li>
+                        <li><a href="">游戏原画</a></li>
+                        <li><a href="#">游戏界面</a></li>
+                        <li><a href="#">游戏场景</a></li>
+                        <li><a href="#">游戏角色</a></li>
+                        <li><a href="#">游戏动作</a></li>
+                        <li><a href="#">游戏动效</a></li>
+                        <li><a href="#">游戏美工</a></li>
+                    </ul>
+                </div>
+                <div class="boxjs">
+                    <ul>
+                        <h4>运营/推广</h4>
+                        <li><a href="#">游戏运营</a></li>
+                        <li><a href="#">游戏编辑</a></li>
+                        <li><a href="#">游戏推广</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subnav">
+                <ul>
+                    <li class="dian1"><a href="#"> &nbsp;技&nbsp;&nbsp;术 <span>></span></a></li>
+                    <li class="dian2"><a href="#"> &nbsp;产&nbsp;&nbsp;品 <span>></span></a></li>
+                    <li class="dian3"><a href="#"> &nbsp;设&nbsp;&nbsp;计 <span>></span></a></li>
+                    <li class="dian4"><a href="#"> &nbsp;运&nbsp;&nbsp;营 <span>></span></a></li>
+                    <li class="dian5"><a href="#"> &nbsp;市&nbsp;&nbsp;场 <span>></span></a></li>
+                    <li class="dian6"><a href="#"> &nbsp;销&nbsp;&nbsp;售 <span>></span></a></li>
+                    <li class="dian7"><a href="#"> &nbsp;职&nbsp;&nbsp;能 <span>></span></a></li>
+                    <li class="dian8"><a href="#"> &nbsp;游&nbsp;&nbsp;戏 <span>></span></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="goods w">
+        <h3>精品推荐</h3>
+        <div class="goods-item">
+            | <a href="#">jQuery</a> | <a href="#">Spark</a> | <a href="#">MySQL</a> | <a href="#">JavaWeb</a> | <a href="#">JavaScript</a> | <a href="#">Ven</a>
+        </div>
+        <div class="mod"> 修改兴趣 </div>
+    </div>
+    <div class="box w">
+        <div class="box_hd">
+            <h3>精品推荐</h3>
+            <a href="#">查看全部</a>
+        </div>
+        <div class="box_bd clearfix">
+            <ul>
+                <li>
+                    <img src="../pbl2.0/sj.jpg" alt="" />
+                    <h4>UI设计师</h4>
+                </li>
+                <li>
+                    <img src="../pbl2.0/qrs.jpg" alt="" />
+                    <h4>嵌入式软件工程师</h4>
+                </li>
+                <li>
+                    <img src="../pbl2.0/xs.png" alt="" />
+                    <h4>销售VP</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $('.dian1').hover(function() {
+            $("#boxq1 ").css('display', 'block');
+        }, function() {
+            $("#boxq1 ").css('display', 'none');
+        });
+        $("#boxq1 ").hover(function() {
+            $(this).css('display', 'block');;
+        }, function() {
+            $(this).css('display', 'none');
+        });
+
+        $('.dian2').hover(function() {
+            $("#boxq2 ").css('display', 'block');
+        }, function() {
+            $("#boxq2 ").css('display', 'none');
+        });
+        $("#boxq2 ").hover(function() {
+            $(this).css('display', 'block');;
+        }, function() {
+            $(this).css('display', 'none');
+        });
+
+        $('.dian3').hover(function() {
+            $("#boxq3 ").css('display', 'block');
+        }, function() {
+            $("#boxq3 ").css('display', 'none');
+        });
+        $("#boxq3 ").hover(function() {
+            $(this).css('display', 'block');;
+        }, function() {
+            $(this).css('display', 'none');
+        });
+
+        $('.dian4').hover(function() {
+            $("#boxq4 ").css('display', 'block');
+        }, function() {
+            $("#boxq4 ").css('display', 'none');
+        });
+        $("#boxq4 ").hover(function() {
+            $(this).css('display', 'block');;
+        }, function() {
+            $(this).css('display', 'none');
+        });
+
+        $('.dian5').hover(function() {
+            $("#boxq5 ").css('display', 'block');
+        }, function() {
+            $("#boxq5 ").css('display', 'none');
+        });
+        $("#boxq5 ").hover(function() {
+            $(this).css('display', 'block');;
+        }, function() {
+            $(this).css('display', 'none');
+        });
+
+        $('.dian6').hover(function() {
+            $("#boxq6 ").css('display', 'block');
+        }, function() {
+            $("#boxq6 ").css('display', 'none');
+        });
+        $("#boxq6 ").hover(function() {
+            $(this).css('display', 'block');;
+        }, function() {
+            $(this).css('display', 'none');
+        });
+
+        $('.dian7').hover(function() {
+            $("#boxq7 ").css('display', 'block');
+        }, function() {
+            $("#boxq7 ").css('display', 'none');
+        });
+        $("#boxq7 ").hover(function() {
+            $(this).css('display', 'block');;
+        }, function() {
+            $(this).css('display', 'none');
+        });
+
+        $('.dian8').hover(function() {
+            $("#boxq8 ").css('display', 'block');
+        }, function() {
+            $("#boxq8 ").css('display', 'none');
+        });
+        $("#boxq8 ").hover(function() {
+            $(this).css('display', 'block');;
+        }, function() {
+            $(this).css('display', 'none');
+        });
+    })
+</script>
+
+</html>
